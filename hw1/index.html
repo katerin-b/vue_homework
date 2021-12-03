@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homework 1</title>
+    <!-- подключаем Vue -->
+    <script src="https://unpkg.com/vue@next"></script>
+    <link rel="stylesheet" href="css/hw1.css">
+</head>
+<body>
+    <section id="app">
+        <div class="cards-container">
+            <div class="card" v-for="animal in animals">
+            <img v-bind:src="animal.cover">
+            <h1>{{animal.name}}</h1>
+            <p>Type {{animal.type}}</p>
+            <p>Age {{animal.age}}</p>
+            <p>Color {{animal.color}} </p>
+            <a href="#">Подробнее...</a>
+            </div>
+        </div>
+
+            <!-- для МАССИВА используем ЦИКЛ -->
+            <!-- почему так не получилось? -->
+            <!-- <li v-for="animalName1 in animals.name">{{ animalName1 }}</li> -->
+
+    </section>
+    <script src="js/hw1.js"></script>
+</body>
+</html>
