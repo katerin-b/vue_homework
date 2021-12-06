@@ -1,0 +1,47 @@
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+.cards-container {
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+
+.tab {
+    text-align: center;
+    font-family: Inter;
+    color: #272848;
+    width: 50%;
+    background-color: #ECEFF1;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    display: inline-block;
+    border-bottom: 4px solid transparent;
+}
+
+.active {
+    border-bottom-color:  #2684FE;
+}
+
+.card {
+    display: flex;
+    margin-bottom: 1rem;
+    border-radius: 50%;
+}
+
+.round-image {
+    border-radius: 50%;
+
+}
+
+.description {
+    margin-left: 1rem;
+    font-family: Inter;
+}

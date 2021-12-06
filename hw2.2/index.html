@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homework 2.2</title>
+    <!-- подключаем Vue -->
+    <script src="https://unpkg.com/vue@next"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <section id="app" class="container">
+        <!-- tabTitles: ["Отобразить сеткой", "Отобразить списком"],
+        currentTabTitle: "Отобразить сеткой" -->
+        <!-- меню (вкладки) - теги span -->
+        <span class="tab"
+        v-for="title in tabTitles"
+        :class="{active: title === currentTabTitle}"
+        v-on:click="currentTabTitle = title">
+        {{ title }}
+        </span>
+
+        <!-- вкладка "Отобразить сеткой" -->
+        <section v-if="currentTabTitle === tabTitles[0]">
+            <div class="cards-container" v-for="article in articles">
+                <img v-bind:src=article.image>
+            </div>
+        </section>
+
+        <!-- вкладка "Отобразить списком" -->
+        <section v-show="currentTabTitle === tabTitles[1]">
+            <div>
+                <div class="card" v-for="article in articles">
+                    <img class="round-image" v-bind:src="article.image">
+                    <span class="description">{{ article.title.toUpperCase() }}</span>
+                </div>
+            </div>
+        </section>
+    </section>
+    <script src="js/hw2.2.js"></script>
+</body>
+</html>
