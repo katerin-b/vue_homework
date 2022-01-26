@@ -14,7 +14,7 @@
            <div class="card" v-for="good in sortedByCount"
             :class="{zero: good.count === 0, 'not-many': good.count<20 && good.count>1, many: good.count >20}">
                <h2>{{ good.title }}</h2>
-                <p>Price: {{ good.price }}</p>
+                <p>Цена: {{ good.price }}</p>
             </div>
         </div>
     </section>
