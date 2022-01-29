@@ -2,23 +2,20 @@
 // createRouter нужен для создания объекта router
 // createWebHistory для генерации ссылок
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../views/Home.vue'
+// *4.1 ОТДЕЛЬНО ИМПОРТИРУЕМ
+import Home from '../views/Home.vue' // ../ - переход на уровень выше
 
 
 // 2. СОЗДАНИЕ МАССИВА С МАРШРУТАМИ
 const routes = [
   {
+    // *4.2 ОТДЕЛЬНО ПОДКЛЮЧАЕМ => при сборке все компоненты с таким типом подключения попадут в 1 js файл (для часто использующихся компонентов)
     path: '/',
-    name: 'Home',
     component: Home
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    path: '/products', /* <router-link to="/products"></router-link> */
+    component: () => import( '../views/Products.vue') // *4.3 ЛЕНИВАЯ ЗАГРУЗКА => при сборке каждый компонент прописывается в отдельном js файле (для редко использующихся компонентов; подгружаются, когда есть необходимость)
   }
 ]
 
