@@ -11,7 +11,7 @@
 </template>
 
 <script>
-export default {// props - свойство (такие атрибуты будут у компонента: links, )
+export default {   // props - свойство (такие атрибуты будут у компонента: links,
   props: {
     links: {
       required: true,
