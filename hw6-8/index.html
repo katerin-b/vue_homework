@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Homework 6-8</title>
+    <!-- подключаем Vue -->
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <section id="app">
+        <div v-for="good in goods">
+            <h2>{{good.title}}</h2>
+            <p>ID {{good.id}}</p>
+            <p>Price {{good.price}}</p>
+            <p>Count {{good.count}}</p>
+        </div>
+    </section>
+    <!-- подключаем js -->
+    <script src="js/hw6-8.js"></script>
+</body>
+</html>

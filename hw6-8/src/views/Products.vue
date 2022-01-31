@@ -25,7 +25,8 @@ export default {
     // fetch - для отправки запроса на сервер
     // первым аргументом передаем строчку запроса (куда)
     // ???? пробовала сложить данные сюда ../assets/products.json не работает
-    fetch('../assets/products.json')
+    // заменила на this.$store.state.products
+    fetch(this.$store.state.products)
         .then(response => response.json()) // json() text() blob() // ф-ия вызывается, когда получен ответ от сервера
         .then(data => this.products = data); // в эту ф-ию передаются данные, с которыми мы уже можем работать
          // (полученные из объекта response и преобразованные в валидный формат)

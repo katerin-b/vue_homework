@@ -1,6 +1,8 @@
 <!-- КАРТОЧКА ТОВАРА -->
 <template>
   <div>
+    <!-- добавление изображения -->
+    <img :src="require(`../assets/${obj.image}`)" :alt="obj.image">
     <h2>{{ obj.title }}</h2>
     <p>{{ obj.description }}</p>
     <p>Цена: {{ obj.price }} руб.</p>

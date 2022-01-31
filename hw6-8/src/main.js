@@ -1,8 +1,12 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import store from './store'
+// подключение Vuex
+import store from './store/store'
 // 1.ИМПОРТ ROUTER
-import router from './router'
+import router from './router/router'
+
+
+
 
 
 // ПОДКЛЮЧАЕТСЯ В ДАННОМ ФАЙЛЕ
@@ -27,4 +31,4 @@ import router from './router'
 // в метод createApp передаем ссылку на корневой компонент (App)
 // .use(router) - подключение всего, что нужно приложению глобально (компоненты, маршрутизатор, vuex, vuetify)
 // .mount('#app') - монтирование приложения в html
-createApp(App).use(router).use(store).mount('#app')
+createApp(App).use(store).use(router).mount('#app')
