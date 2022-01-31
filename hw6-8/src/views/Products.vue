@@ -2,6 +2,7 @@
 <template>
   <div>Товары</div>
   <!-- 3. использование компонента (обязательно, если компонент импортировали)-->
+  <!-- v-for - директива -->
   <mini-card v-for="product in products" :obj="product" :key="product.id"/>
 </template>
 
