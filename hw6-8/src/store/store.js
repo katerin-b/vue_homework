@@ -13,7 +13,7 @@ export default createStore({
             "вертикально, а не горизонтально, вследствие чего пианино занимает гораздо меньше места, чем рояль.",
         price: 3000,
         count: 0,
-        image: "piano.jpg"
+        image: "piano.jpeg"
       },
       {
         id: 2,
@@ -25,7 +25,7 @@ export default createStore({
             "и некоторые другие виды.",
         price: 1200,
         count: 40,
-        image: "guitar.jpg"
+        image: "guitar.jpeg"
       },
       {
         id: 3,
@@ -37,7 +37,7 @@ export default createStore({
             "производится из дерева, металла(стали, латуни), акрилового пластика или даже глины.",
         price: 2700,
         count: 12,
-        image: "drum.jpg"
+        image: "drum.jpeg"
       },
       {
         id: 4,
@@ -48,7 +48,7 @@ export default createStore({
             "Один из древнейших музыкальных инструментов. Относится к группе деревянных духовых.",
         price: 900,
         count: 50,
-        image: "flute.jpg"
+        image: "flute.jpeg"
       },
       {
         id: 5,
