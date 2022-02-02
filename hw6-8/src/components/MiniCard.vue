@@ -7,7 +7,8 @@
     </div>
     <div>
       <h2>{{ obj.title }}</h2>
-      <p>{{ obj.description }}</p>
+      <!-- в значении свойства description вывести первые 15 символов -->
+      <p>{{ obj.description.substring(0, 15)}}...</p>
       <p>Цена: {{ obj.price }} руб.</p>
       <p v-if="obj.count > 0">{{ obj.count }} шт.</p>
       <p v-else>Нет в наличии</p>
@@ -17,6 +18,7 @@
   </div>
 </template>
 <script>
+
 export default {
   props: {
     obj: Object
