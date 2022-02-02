@@ -3,7 +3,9 @@
   <div>Товары</div>
   <!-- 3. использование компонента (обязательно, если компонент импортировали)-->
   <!-- v-for - директива -->
-  <mini-card v-for="product in products" :obj="product" :key="product.id"/>
+  <div class="container">
+    <mini-card v-for="product in products" :obj="product" :key="product.id"/>
+  </div>
 </template>
 
 <script>
@@ -22,3 +24,11 @@ export default {
   }
 }
 </script>
+
+<style>
+.container {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+</style>
