@@ -33,7 +33,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="css">
 /* ЛОКАЛЬНЫЕ СТИЛИ (SCOPED)(ДОСТУПНЫ ОДНОМУ КОМПОНЕНТУ)
 <style lang="css" scoped>*/
 /*  ГЛОБАЛЬНЫЕ СТИЛИ (БЕЗ SCOPED)(ДОСТУПНЫ ВСЕМ КОМПОНЕНТАМ)(ПРИ СБОРКЕ СОБЕРЕТСЯ В CSS)*/
@@ -44,6 +44,20 @@ lang="css" - значение по умолчанию, css синтаксис
 lang="sass" - sass синтаксис
 lang="scss" - scss синтаксис
 lang="less" - less синтаксис
+
 */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+h1{
+  font-family: Inter;
+  font-size: 1.6rem;
+}
+.container {
+  width: 100%;
+  max-width: 60rem;
+  margin: 0 auto;
+}
+
 </style>
 

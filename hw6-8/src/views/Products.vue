@@ -1,9 +1,9 @@
 <!-- ВСЕ ТОВАРЫ -->
 <template>
-  <div>Товары</div>
   <!-- 3. использование компонента (обязательно, если компонент импортировали)-->
   <!-- v-for - директива -->
   <div class="container">
+    <h1>Товары</h1>
     <mini-card v-for="product in products" :obj="product" :key="product.id"/>
   </div>
 </template>
@@ -26,9 +26,5 @@ export default {
 </script>
 
 <style>
-.container {
-  width: 100%;
-  max-width: 960px;
-  margin: 0 auto;
-}
+
 </style>

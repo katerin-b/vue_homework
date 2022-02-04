@@ -1,39 +1,55 @@
 <!-- ИНФОРМАЦИЯ ОБ ОДНОМ ТОВАРЕ -->
 <template>
-  <div v-if="loading">Идет загрузка...</div>
-
-  <div v-if="!loading"></div>
-  <div>
-    <h2>{{ product.title }}</h2>
-    <p>{{ product.description }}</p>
-    <p>Цена: {{ product.price }} руб.</p>
-    <p>В наличии: {{ product.count }} шт.</p>
+  <div class="container">
+   <!-- <div v-if="loading">Идет загрузка...</div>
+    <div v-if="!loading">
+      <div class="img">
+        <img :src="require(`../assets/img/${product.image}`)" :alt="product.image">
+      </div>
+        <h2>{{ product.title }}</h2>
+        <p>{{ product.description }}</p>
+        <p>Цена: {{ product.price }} руб.</p>
+        <p>В наличии: {{ product.count }} шт.</p>
+    </div> -->
+    <!-- добавление изображения -->
+    <div>
+      <img :src="require(`../assets/img/${product.image}`)" :alt="product.image">
+    </div>
+    <div class="info">
+      <h2>{{ product.title }}</h2>
+      <p>{{ product.description }}</p>
+      <p>Цена: {{ product.price }} руб.</p>
+      <p>В наличии: {{ product.count }} шт.</p>
+    </div>
   </div>
 </template>
+
 <script>
 export default {
   data() {
     return {
       product: null,
-      loading: true // чтобы не было ошибки, пока данные не успели прийти (если данные получаем с сервера)
+      /* loading: true */
+      // чтобы не было ошибки, пока данные не успели прийти (если данные получаем с сервера)
     }
   },
   created() {
-    // ???? откуда забрать информацию
-    // так не получилось ../assets/products.json
-    // чтобы получить параметр запроса обращаемся к маршрутизатору ко всем его параметрам, а после указать имя параметра
-    // имя параметра - что после :
-    // this.$route.params.id - обращаемся к маршрутизатору ко всем параметрам и получаем значение параметра id
-    fetch(this.$store.state.products + this.$route.params.id) // $ - часть имени (не синтаксис js)
-        // response - объект, который содержит информацию об ответе (статус: успешно или нет, заголовки + данные)
-        .then(response => response.json())
-        // данные сохраняем в значение св-ва product
-        // .then(data => this.product = data);
-        .then(data => {
-          // здесь нужно будет прописывать проверки (найдены данные или нет)
-          this.product = data;
-          this.loading = false; // loading изменится только после того, как product получит свои данные
-        });
-  }
-}
+    this.$store.state.products.forEach((elem) => {
+      if (elem.id === +this.$route.params.id) {
+        this.product = elem;
+      }
+    });
+  },
+};
+
 </script>
+
+
+<style>
+
+.info {
+  font-family: Inter;
+  max-width: 45rem;
+}
+
+</style>
