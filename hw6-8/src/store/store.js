@@ -60,9 +60,13 @@ export default createStore({
         count: 5,
         image: "harp.jpeg"
       }
-    ]
+    ],
+    // корзина для товаров
+    // доступ: this.$store.state.basket
+    basket: [],
   },
   // геттеры для фильтрации данных из state
+  // доступ: this.$store.getters
   getters: {
   },
   mutations: {
