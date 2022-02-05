@@ -14,20 +14,33 @@
       <p v-else>Нет в наличии</p>
       <!-- уведомление родительского компонента, что произошло какое-то событие -->
       <router-link class="link" :to="'/product/' + obj.id">Подробнее</router-link>
+      <button class="button-add" v-if="obj.count > 0" @click="this.addToBasket(obj)">Добавить в корзину</button>
+      <div v-if="this.$store.state.basket[obj.id]">
+        <div>
+          <div class="count">В корзине: {{$store.state.basket[obj.id]}}</div>
+          <button class="button-delete" @click="this.deleteFromBasket(obj)">Удалить</button>
+        </div>
+      </div>
     </div>
   </div>
 </template>
-<script>
 
+
+<script>
+import { mapMutations } from "vuex";
 export default {
   props: {
     obj: Object
-  }
-}
+  },
+ methods: {
+   ...mapMutations(["addToBasket", "deleteFromBasket"]),
+ }
+};
 </script>
 
+
 <style scoped>
-/* посмотреть, где подключить шрифт в vue */
+
 .card {
   font-family: Inter;
   width: 16rem;
@@ -42,12 +55,10 @@ export default {
   cursor: pointer;
   flex: 1 1 auto;
 }
-
 .card:hover {
   transform: scale(1.05);
   box-shadow: 10px 10px 15px rgba(0,0,0,0.3);
 }
-
 .card h2 {
   margin: 0px;
   color: black;
@@ -57,7 +68,6 @@ export default {
   padding-top: 8%;
   padding-bottom: 8%;
 }
-
 .card p {
   margin: 0px;
   color: #0d131a;
@@ -66,7 +76,6 @@ export default {
   line-height: 130%;
   padding: 3% 3% 3% 8%;
 }
-
 .img {
   width: 100%;
   height: 12rem;
@@ -76,12 +85,11 @@ export default {
   justify-content: center;
   background-color: white;
 }
-
 .link{
   color: #0276d7;
   font-weight: 400;
   font-size: 1rem;
   padding: 3% 3% 3% 8%;
 }
-
 </style>
+

@@ -1,5 +1,9 @@
 import { createStore } from 'vuex'
 // Vuex - паттерн управления состоянием + библиотека для приложений на Vue.js
+// Данные, объявленные в этом хранилище, доступны всем компонентам
+// Метод createStore создает экземпляр Vuex
+// В метод передаем объект с настройками (благодаря которым компоненты смогут обращаться к хранилищу)
+// При обновлении страницы хранилище приходит к своему первоначальному виду
 export default createStore({
   // состояние (хранимые данные)
   state: { // доступ в компоненте: this.$store.state
@@ -62,17 +66,39 @@ export default createStore({
       }
     ],
     // корзина для товаров
-    // доступ: this.$store.state.basket
+    // доступ в компоненте: this.$store.state.basket
     basket: [],
   },
-  // геттеры для фильтрации данных из state
+  // геттеры для фильтрации данных из state (возвращают отфильтрованные данные из state)
+  // геттеры не меняют state
   // доступ: this.$store.getters
-  getters: {
-  },
+  getters: {},
+  // мутации - методы для изменения данных из state
+  // (например, добавление и удаление товара из корзины)
+  // мутации не могут быть асинхронными!
   mutations: {
+    // добавление товара
+    addToBasket(state, products) {
+      if (state.basket[products.id]) {
+        state.basket[products.id] += 1;
+        products.count -= 1;
+      } else {
+        state.basket[products.id] = 1;
+        products.count -= 1;
+      }
+    },
+    // удаление товара
+    deleteFromBasket(state, products) {
+      if (state.basket[products.id] > 1) {
+        state.basket[products.id] -= 1;
+        products.count += 1;
+      } else {
+        delete state.basket[products.id];
+        products.count += 1;
+      }
+    },
   },
-  actions: {
-  },
-  modules: {
-  }
+  actions: {},
+  modules: {}
 })
+

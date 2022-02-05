@@ -11,7 +11,6 @@
 <script>
 // 1. импорт компонента
 import MiniCard from "@/components/MiniCard";
-
 // экспорт объекта с описанием компонента
 export default {
   // 2. регистрация компонента
@@ -26,5 +25,4 @@ export default {
 </script>
 
 <style>
-
 </style>

@@ -20,7 +20,11 @@ const routes = [
   {
     path: '/product/:id', // из маршрута нужно получить значение параметра id
     component: () => import( '../views/Product.vue')
-  }
+  },
+  /*{
+    path: '/basket',
+    component: () => import( '../views/Basket.vue')
+  }*/
 ]
 
 
