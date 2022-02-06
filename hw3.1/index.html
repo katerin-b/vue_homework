@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Homework 3.1</title>
+    <!-- подключаем Vue -->
+    <script src="https://unpkg.com/vue@next"></script>
+    <!-- подключаем CSS -->
+    <link rel="stylesheet" href="css/hw3.1.css">
+</html>
+<body>
+    <div id="app" class="container">
+        <div>
+            <input type="search"
+                   placeholder="Поиск по статьям"
+                   v-model.trim="searchQuery">
+        </div>
+        <div class="row"
+             v-for="article in filtered">
+            <img :src="article.image" v-bind:alt="article.title.toUpperCase()">
+            <h2>{{ article.title.toUpperCase() }}</h2>
+        </div>
+    </div>
+    <!-- подключаем JS -->
+    <script src="js/hw3.1.js"></script>
+</body>
