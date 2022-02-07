@@ -11,8 +11,8 @@
     <section id="app" class="container">
             <!-- вывод статей -->
         <div>
-            <div class="tab" v-on:click="displayMode = 'grid'">Отобразить сеткой</div>
-            <div class="tab" v-on:click="displayMode = 'list'">Отобразить списком</div>
+            <div class="tab" v-on:click="displayMode='grid'">Отобразить сеткой</div>
+            <div class="tab" v-on:click="displayMode='list'">Отобразить списком</div>
         </div>
         <div :class="displayMode">
             <div v-for="article in articles">
