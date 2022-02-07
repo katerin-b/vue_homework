@@ -1,18 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
 * {
     box-sizing: border-box;
 }
 
 .container {
-    max-width: 1920px;
+    font-family: Inter;
+    max-width: 1110px;
     margin: 0 auto;
 }
-
-.cards-container {
-    display: grid;
-    grid-gap: 2rem;
-    grid-template-columns: repeat(3, 1fr);
-}
-
 
 .tab {
     text-align: center;
@@ -24,24 +20,22 @@
     cursor: pointer;
     display: inline-block;
     border-bottom: 4px solid transparent;
+    border-image: 50%;
 }
 
-.active {
-    border-bottom-color:  #2684FE;
+.tab:hover {
+    background-color: #abbdca;
 }
 
-.card {
-    display: flex;
-    margin-bottom: 1rem;
-    border-radius: 50%;
+.grid {
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
 }
 
-.round-image {
-    border-radius: 50%;
-
+.list {
+    flex: 100%;
+    margin-top: 2rem;
 }
 
-.description {
-    margin-left: 1rem;
-    font-family: Inter;
-}
+

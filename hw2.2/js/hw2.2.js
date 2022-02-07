@@ -30,9 +30,8 @@ let articles =  [
 let app = Vue.createApp({
     data(){
         return {
-            tabTitles: ["Отобразить сеткой", "Отобразить списком"],
-            currentTabTitle: "Отобразить сеткой",
-            articles: articles
+            articles: articles,
+            displayMode: "grid"
         }
     }
 });
