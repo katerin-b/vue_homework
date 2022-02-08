@@ -1,38 +1,27 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <title>Homework 3.2</title>
     <!-- подключаем Vue -->
     <script src="https://unpkg.com/vue@next"></script>
 </head>
 <body>
-    <section id="app">
-        <span v-for="service in services">
-            <div class="servise__info">
-                <div>
-                    <h2>{{ service.title }}</h2>
-                    <span>Стоимость: {{ service.price }}</span
-                </div>
-                <button class="service__button"
-                        v-on:click="service.inList ? removeFromList(service) : addToList(service)">
-                    {{ service.inList ? "Удалить" : "Добавить"}}
-                </button>
+<section id="app">
+    <form>
+        <h2>Услуги</h2>
+        <fieldset>
+            <div v-for="service in services">
+                <input type="checkbox"
+                       @click="getTotalPrice($event.target.checked, service.price)">
+                <div>{{ service.title }}</div>
+                <div>{{ service.price }}</div>
             </div>
-        </span>
-
-        <!-- Выбранные пользователем услуги -->
-        <!-- userList: [] -->
-        <section v-show="services">
-            <div>
-                <div v-else class="user-list"> <!-- Если пользователь выбрал услуги -->
-                    <div class="service user-list__service" v-for="service.inList">
-                        <h2> {{service.title }}</h2>
-                        <p> {{service.price }}</p>
-                    </div>
-            </div>
-        </section>
-    </section>
-    <script src="js/hw3.2.js"></script>
+        </fieldset>
+    </form>
+    <div>Итоговая сумма:{{ totalPrice }}</div>
+</section>
+<script src="js/hw3.2.js"></script>
 </body>
 </html>
+
