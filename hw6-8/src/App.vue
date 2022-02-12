@@ -1,9 +1,9 @@
 <template>
-<!-- ВНЕШНИЙ ВИД КОМПОНЕНТА (HTML РАЗМЕТКА, НО ГЕНЕРИРУЕТСЯ В JS ФАЙЛ)-->
-<!-- 2.3. ИСПОЛЬЗОВАНИЕ КОМПОНЕНТА (обязательно, если компонент импортировали (иначе сборка будет падать)) -->
-<!-- <ShopMenu></ShopMenu> -->
+  <!-- ВНЕШНИЙ ВИД КОМПОНЕНТА (HTML РАЗМЕТКА, НО ГЕНЕРИРУЕТСЯ В JS ФАЙЛ)-->
+  <!-- 2.3. ИСПОЛЬЗОВАНИЕ КОМПОНЕНТА (обязательно, если компонент импортировали (иначе сборка будет падать)) -->
+  <!-- <ShopMenu></ShopMenu> -->
   <shop-menu :links="tabs"></shop-menu>
-<!-- Если между открывающим и закрывающим тегом никакой контент не передаем, то пишем одиночный тег <router-view/> -->
+  <!-- Если между открывающим и закрывающим тегом никакой контент не передаем, то пишем одиночный тег <router-view/> -->
   <router-view/>
 </template>
 
@@ -27,11 +27,13 @@ export default {
       tabs: [
         {title: "Главная", path: "/"},
         {title: "Все товары", path: "/products"},
+       /* {title: "Корзина", path: "/basket"},*/
       ]
     }
   }
 }
 </script>
+
 
 <style lang="css">
 /* ЛОКАЛЬНЫЕ СТИЛИ (SCOPED)(ДОСТУПНЫ ОДНОМУ КОМПОНЕНТУ)
@@ -44,20 +46,33 @@ lang="css" - значение по умолчанию, css синтаксис
 lang="sass" - sass синтаксис
 lang="scss" - scss синтаксис
 lang="less" - less синтаксис
-
 */
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
 
 h1{
   font-family: Inter;
   font-size: 1.6rem;
 }
+
 .container {
   width: 100%;
   max-width: 60rem;
   margin: 0 auto;
 }
 
-</style>
+button {
+  font-family: Inter;
+  font-size: 1rem;
+}
 
+.button-add {
+  background-color: #42b983;
+  color: #0e3524;
+}
+
+.button-delete {
+  background-color: #d28585;
+  color: darkred;
+}
+
+</style>
